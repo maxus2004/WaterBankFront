@@ -11,6 +11,11 @@
                 document.getElementById('to_box').style='display: none';
                 document.getElementById('count_box').style='';
             }
+            
+            function apply(){
+                document.getElementById('count_box').style='display: none';
+                document.getElementById('from_box').style='';
+            }
         </script>
         <style>
             body{
@@ -152,7 +157,7 @@
                         </button>
                     </td>
                     <td>
-                        <button class="numpad_btn">
+                        <button class="numpad_btn" onclick="apply()">
                            OK
                         </button>
                     </td>
