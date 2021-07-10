@@ -5,6 +5,11 @@
                 document.getElementById('from_box').style='display: none';
                 document.getElementById('to_box').style='';
             }
+            
+            function setFrom(to){
+                document.getElementById('to_box').style='display: none';
+                document.getElementById('count_box').style='';
+            }
         </script>
     </head>
     <body>
@@ -32,23 +37,23 @@
             <p>
                 Куда
             </p>
-            <button>
+            <button onclick="setTo('remove')">
                 Убавить
             </button>
             <br>
-            <button>
+            <button onclick="setTo('storage')">
                 В склад
             </button>
             <br>
-            <button>
+            <button onclick="setTo('fridge')">
                 В холодильник
             </button>
             <br>
-            <button>
+            <button onclick="setTo('aircon')">
                 В кондиционер
             </button>
         </div>
-        <div id="count" style="display:none">
+        <div id="count_box" style="display:none">
             <p>
                 Сколько
             </p>
