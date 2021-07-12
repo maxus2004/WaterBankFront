@@ -17,10 +17,7 @@
                 update()
                 setInterval(update,5000)
             }
-            
-            const bridge = vkBridge;
-            bridge.subscribe((e) => console.log("vkBridge event", e));
-            bridge.send("VKWebAppInit", {});
+            vkBridge.send("VKWebAppInit", {});
 
         </script>
         <style>
