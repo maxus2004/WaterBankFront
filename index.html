@@ -7,7 +7,7 @@
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('warm').innerText=data['storage'].count
-document.getElementById('cold').innerText=data['fridge'].count
+                    document.getElementById('cold').innerText=data['fridge'].count
                 });
             }
         </script>
@@ -36,7 +36,7 @@ document.getElementById('cold').innerText=data['fridge'].count
                 background: rgba(0,0,0,0.2);
             }
             .info{
-                
+                font-size: 3rem;
             }
             #warm{
                 color:rgb(255,0,0);
