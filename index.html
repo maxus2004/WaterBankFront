@@ -2,15 +2,18 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
-            window.onload=function(){
-            setInterval(function(){
-            fetch('/api/getpublic')
+            function update(){
+                fetch('/api/getpublic')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('warm').innerText=data['storage'].count
                     document.getElementById('cold').innerText=data['fridge'].count
                 });
-            },10000, 0)
+            }
+            
+            window.onload=function(){
+                update()
+                setInterval(update,10000)
             }
         </script>
         <style>
