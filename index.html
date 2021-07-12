@@ -3,6 +3,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
         <script>
+        
             function update(){
                 fetch('/api/getpublic')
                 .then(response => response.json())
@@ -16,6 +17,11 @@
                 update()
                 setInterval(update,5000)
             }
+            
+            const bridge = vkBridge.default;
+            bridge.subscribe((e) => console.log("vkBridge event", e));
+            bridge.send("VKWebAppInit", {});
+
         </script>
         <style>
             body{
