@@ -2,11 +2,13 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
+            window.onload=function(){
             fetch('/api/getpublic')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('warm').innerText=data
                 });
+            }
         </script>
         <style>
             body{
