@@ -6,7 +6,7 @@
             fetch('/api/getpublic')
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('warm').innerText=data
+                    document.getElementById('warm').innerText=data['storage'].count
                 });
             }
         </script>
