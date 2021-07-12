@@ -2,20 +2,11 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
-            function setFrom(from){
-                document.getElementById('from_box').style='display: none';
-                document.getElementById('to_box').style='';
-            }
-            
-            function setTo(to){
-                document.getElementById('to_box').style='display: none';
-                document.getElementById('count_box').style='';
-            }
-            
-            function apply(){
-                document.getElementById('count_box').style='display: none';
-                document.getElementById('from_box').style='';
-            }
+            fetch('/api/getpublic')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('warm').innerText=data
+                });
         </script>
         <style>
             body{
@@ -44,10 +35,10 @@
             .info{
                 
             }
-            #warmtext{
+            #warm{
                 color:rgb(255,0,0);
             }
-            #coldtext{
+            #cold{
                 color:rgb(0,0,255);
             }
         </style>
